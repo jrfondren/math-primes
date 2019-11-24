@@ -1,0 +1,15 @@
+.dub
+docs.json
+__dummy.html
+docs/
+/math-primes
+math-primes.so
+math-primes.dylib
+math-primes.dll
+math-primes.a
+math-primes.lib
+math-primes-test-*
+*.exe
+*.o
+*.obj
+*.lst

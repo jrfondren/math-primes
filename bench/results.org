@@ -1,0 +1,48 @@
+* Versions
+
+| gmp-d             | 0.1.5 |
+| math-primes       | 0.1.0 |
+| ctprimes          | 1.0.0 |
+| Math::Prime::Util |  0.73 |
+
+* Average of 3 runs as scripts, sum of primes < 20_000
+  
+Compiled by dmd, compilation resources included in these figures.
+
+| Module      |  Speed | MS       | MaxRSS  |
+|-------------+--------+----------+---------|
+| gmp-d       |     1x | 467.6 ms | 39.0 MB |
+| math-primes | 1.008x | 471.3 ms | 54.3 MB |
+| ctprimes    | 38.58x | 18 s     | 1.33 GB |
+
+* Average of 3 runs after compilation, sum of primes < 20_000
+  
+Compiled by dmd -O -release -inline, only runtime figures here.
+
+| Module      |  Speed | MS       | MaxRSS |
+|-------------+--------+----------+--------|
+| gmp-d       |  49.0x | 32.67 ms | 5.7 MB |
+| math-primes |     1x | 0.667 ms | 5.5 MB |
+| ctprimes    |     1x | 0.667 ms | 5.5 MB |
+| perl        | 22.99x | 14.67 ms | 9.2 MB |
+
+* Average of 3 runs as scripts, sum of primes < 2_000_000
+
+Compiled by dmd, compilation resources included in these figures.
+
+ctprimes was excluded due to the limited memory (only 16 GB) of the
+benchmarking computer.
+
+| Module      |  Speed | MS      | MaxRSS  |
+|-------------+--------+---------+---------|
+| gmp-d       |     1x | 2002 ms | 39.0 MB |
+| math-primes | 4.105x | 8220 ms | 1.53 GB |
+| perl        | 0.007x | 15 ms   | 9.4 MB  |
+
+* Perl
+
+Command: perl -MMath::Prime::Util=sum_primes -le 'print sum_primes(2_000_000)'
+
+Math-Util-Prime is obviously much more advanced, with a lot of extra
+prime-number work and utilities put into it, and it's clearly cheating 
+very hard with this last benchmark :)

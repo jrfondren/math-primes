@@ -1,0 +1,6 @@
+name "gmp_sum"
+description "A minimal D benchmark"
+authors "Julian Fondren"
+copyright "Copyright © 2019, Julian Fondren"
+license "MIT"
+dependency "gmp-d" version="~>0.1.5"

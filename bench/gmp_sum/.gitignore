@@ -1,0 +1,15 @@
+.dub
+docs.json
+__dummy.html
+docs/
+/gmp_sum
+gmp_sum.so
+gmp_sum.dylib
+gmp_sum.dll
+gmp_sum.a
+gmp_sum.lib
+gmp_sum-test-*
+*.exe
+*.o
+*.obj
+*.lst

@@ -1,0 +1,5 @@
+name "math-primes"
+description "Some utilities related to prime numbers"
+authors "Julian Fondren"
+copyright "Copyright © 2019, Julian Fondren"
+license "MIT"
