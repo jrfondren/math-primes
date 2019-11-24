@@ -5,6 +5,9 @@
 | ctprimes          | 1.0.0 |
 | Math::Prime::Util |  0.73 |
 
+NB. ctprimes was updated on 24Nov to use a sieve so ~master should perform a
+lot more like math-primes.
+
 * Average of 3 runs as scripts, sum of primes < 20_000
   
 Compiled by dmd, compilation resources included in these figures.
