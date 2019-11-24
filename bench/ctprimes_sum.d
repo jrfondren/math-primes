@@ -1,6 +1,6 @@
 #! /usr/bin/env dub
 /+ dub.sdl:
-    dependency "ctprimes" version="~>1.0.0"
+    dependency "ctprimes" version="~>1.0.1"
 +/
 
 void main() {

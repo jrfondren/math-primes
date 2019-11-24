@@ -2,11 +2,8 @@
 
 | gmp-d             | 0.1.5 |
 | math-primes       | 0.1.0 |
-| ctprimes          | 1.0.0 |
+| ctprimes          | 1.0.1 |
 | Math::Prime::Util |  0.73 |
-
-NB. ctprimes was updated on 24Nov to use a sieve so ~master should perform a
-lot more like math-primes.
 
 * Average of 3 runs as scripts, sum of primes < 20_000
   
@@ -16,7 +13,7 @@ Compiled by dmd, compilation resources included in these figures.
 |-------------+--------+----------+---------|
 | gmp-d       |     1x | 467.6 ms | 39.0 MB |
 | math-primes | 1.008x | 471.3 ms | 54.3 MB |
-| ctprimes    | 38.58x | 18 s     | 1.33 GB |
+| ctprimes    | 1.051x | 491.3 s  | 80.2 MB |
 
 * Average of 3 runs after compilation, sum of primes < 20_000
   
@@ -33,8 +30,8 @@ Compiled by dmd -O -release -inline, only runtime figures here.
 
 Compiled by dmd, compilation resources included in these figures.
 
-ctprimes was excluded due to the limited memory (only 16 GB) of the
-benchmarking computer.
+(Since ctprimes always builds an array of all the involved arrays, it
+uses too much memory for this benchmark.)
 
 | Module      |  Speed | MS      | MaxRSS  |
 |-------------+--------+---------+---------|
