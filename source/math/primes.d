@@ -9,9 +9,6 @@
     the relatively small set here, that I've just wanted for some minor
     benchmarks, but please feel free to submit additional utilities so the
     namespace can become more useful.
-
-    EXAMPLES:
-
 +/
 module math.primes;
 
