@@ -70,7 +70,7 @@ struct Sieve(T = size_t) if (isIntegral!T) {
         immutable size_t length = sieve.length;
         foreach (i; 2 .. length / 2) {
             if (!sieve[i]) {
-                size_t j = from - from % i + i;
+                size_t j = i >= from ? i + i : from - from % i + i;
                 while (j < length) {
                     sieve[j] = true;
                     j += i;
@@ -93,6 +93,7 @@ struct Sieve(T = size_t) if (isIntegral!T) {
                 if (!sieve[i])
                     return;
             }
+            --i;
             // ran out of sieve!
             sieve.length += 5000;
             sift(i - 1);
@@ -137,4 +138,9 @@ unittest {
 
     // this causes compilation to take about 9s and 2 GB of memory.
     // static assert(Sieve!ulong(2_000_000).fixed.sum = 142913828922);
+
+    auto ps = Sieve!int();
+    assert(ps.front == 2);
+    ps.popFront();
+    assert(ps.front == 3);
 }
